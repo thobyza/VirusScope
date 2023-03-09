@@ -179,7 +179,7 @@ img {
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
-        top: 60px;
+        top: 56px;
         left: 0;
         width: 100%;
         flex-direction: column;
@@ -196,7 +196,7 @@ img {
     }
 
     .nav-links.active {
-        height: 200px;
+        height: 180px;
     }
 
     .nav-links li {
