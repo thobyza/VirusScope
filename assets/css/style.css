@@ -1,0 +1,476 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* CSS Base */
+:root {
+    /* --color-acent: #DD143D; */
+    --color-acent: #1D70B8;
+    --color-dark: #333;
+    --color-body: #666;
+    --color-grey: #F6F6F6;
+    --font-base: "Poppins", sans-serif;
+};
+
+*,*::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FFF;
+    color: var(--color-body);
+    font-family: var(--font-base);
+    line-height: 1.8;
+    font-weight: 400;
+    margin: 0px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--color-dark);
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Class tag for heading */
+.heading-xl {
+    font-size: clamp(40px, 8vw, 90px);
+    /* text-transform: uppercase; */
+}
+
+.heading-1 {
+    font-size: clamp(32px, 6vw, 54px);
+}
+
+.heading-2 {
+    font-size: clamp(28px, 4vw, 36px);
+}
+
+.heading-3 {
+    font-size: 20px;
+}
+/* End - Class tag for heading */
+
+
+section {
+    scroll-margin-top: 55px; 
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+/* Global - Class tag */
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Navbar */
+.navbar {
+    /* background-color: black; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    z-index: 999;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand { 
+    color: white;
+    font-size: 28px;
+}
+
+.nav-links {
+    display: flex;
+    margin-bottom: 0px;
+}
+
+.nav-links li:not(:last-child) {
+    margin-right: 44px;
+}
+
+.nav-links li.active a {
+    box-shadow: 0 1.5px var(--color-acent);
+}
+
+.nav-links li a {
+    color: white;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links li a:hover {
+    color: var(--color-acent);
+}
+
+.notredame {
+    display: block;
+    cursor: pointer;    
+    display: none;
+}
+
+.notredame span {
+    display: block;
+    width: 34px;
+    height: 2px;
+    background-color: white;
+    margin: 8px auto;
+    transition: all 0.4s ease;
+}
+
+.notredame.active span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+}
+
+.notredame.active span:nth-child(2) {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+/* Scroll */
+.scrolled {
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.scrolled .navbar-brand {
+    color: var(--color-dark);
+}
+
+.scrolled .nav-links li a {
+    color: var(--color-dark);
+}
+
+.scrolled .nav-links li a:hover {
+    color: var(--color-acent);
+}
+
+.scrolled .notredame span {
+    background-color: var(--color-dark);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        padding: 0 24px;
+        transition: all 0.3s ease-in-out;
+        height: 0;
+        overflow: hidden;
+        background-color: white;
+        justify-content: center;
+    }
+
+    .nav-links li a {
+        color: var(--color-dark);
+    }
+
+    .nav-links.active {
+        height: 200px;
+    }
+
+    .nav-links li {
+        padding: 6px 0;
+    }
+
+    .notredame {
+        display: block;
+    }
+}
+
+/* Hero */
+#hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/corona-2-c.jpg);
+
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+#hero h1 {
+    color: white;
+}
+
+@keyframes scrolltodown {
+    0% {
+        transform: translateY(30%);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(-30%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(60%);
+        opacity: 0;
+    }
+}
+
+.scroll-to-down {
+    width: 28px;
+    height: 58px;
+    margin-left: -15px;
+    display: grid;
+    place-content: center;
+    font-size: 24px;
+    color: white;
+    border: 2px solid rgba(255,255,255, 0.2);
+    border-radius: 100px;
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+}
+
+.scroll-to-down .las {
+    animation: scrolltodown 2s ease infinite;
+}
+
+/* -------- Covid-19 Data Tracker ------------ */
+.border-hover {
+    transition: all 0.4s ease-out;
+    border: 2px solid transparent;
+    background-color: #F6F6F6;
+}
+
+.border-hover:hover {
+    /* background-color: var(--color-acent); */
+    border-color: var(--color-acent);
+}
+
+/* Tabs */
+.btn-search {
+    color: #7B8AB8;
+    position: relative;
+    top: -2px;
+    border-radius: 10px;
+    border-width: 2px;
+    height: 36px;
+    margin-left: 10px;
+}
+
+.btn-search:hover {
+    background-color: var(--color-acent);
+    color: #FFF
+}
+
+.btn-search span {
+    position: relative;
+    top: -10px;
+}
+
+
+#data-display {
+    padding: 60px 0 120px 0;
+    background-color: #FFF;
+}
+
+#data-display input {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(140, 140, 140);
+    height: 36px;
+    justify-content: center;
+    text-align: center;
+}
+
+#data-display input:focus {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-acent)
+}
+
+#data-display .icon {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    color: var(--color-acent);
+    font-size: 34px;
+    background-color: #FFF;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(140, 140, 140, 0.119);
+}
+
+.tabs p {
+    font-size: 28px;
+    font-weight: 600;
+    color: rgb(33, 33, 33);
+}
+
+/* ------------- Counter ------------------ */
+#counter {
+    /* background: linear-gradient(rgba(var(--c-brand-rgb), 0.8), rgba(var(--c-brand-rgb), 0.8)), url(/assets/images/counter.jpg); */
+    background-image: url(../images/corona-1.jpg), linear-gradient(#1b4465a5,#1b4465a5);;
+    background-blend-mode: overlay;
+    background-position: center;
+    background-size: cover;
+}
+
+.section-counter {
+    padding-top: 56px;
+    padding-bottom: 70px;
+}
+
+.heading-counter {
+    padding-bottom: 45px;
+}
+
+#counter h2 {
+    color: #FFF;
+}
+
+#counter span {
+    color:#929292
+}
+
+/* ------------ More Data ---------------- */
+#more-data {
+    margin-top: 20px;
+    background-color: #FFF;
+}
+
+.border-custom {
+    /* border: 1px solid #44444485; */
+    transition: all 0.4s ease-in-out;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    background-color: #F6F6F6;
+}
+
+.border-custom:hover {
+    border-color: var(--color-acent);
+}
+
+#more-data img {
+    /* float: left; */
+    height: 180px;
+    object-fit: cover;
+}
+
+#more-data h4:hover {
+    color: var(--color-acent);
+}
+
+.a-read-more {
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.a-read-more:hover {
+   text-decoration: underline;
+}
+
+/* -------------- News ------------------- */
+#news {
+    margin-bottom: 60px;
+}
+
+.btn-more-data {
+    color: #7B8AB8;
+    position: relative;
+    top: -2px;
+    border-radius: 10px;
+    border-width: 2px;
+    height: 36px;
+    margin-left: 10px;
+}
+
+.btn-more-data:hover {
+    background-color: var(--color-acent);
+    color: white;
+}
+
+.btn-more-data span {
+    position: relative;
+    top: -10px;
+}
+
+.border-custom-news {
+    border: 1px solid #44444461;
+    transition: all 0.4s ease-in-out;
+    border-radius: 16px;
+}
+
+.border-custom-news:hover {
+    border-color: var(--bs-blue);
+}
+
+.badge {
+    background-color: #fff4d6;
+    padding: 5px 12px;
+    color: #444444ac;
+}
+
+/* ------------- Footer ---------------- */
+footer {
+    padding-top: 60px;
+    background-color: #000000;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer .footer-top {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.132);
+}
+
+footer .footer-bottom {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+footer h5 {
+    color: #dadada;
+}
+
+footer li {
+    color: #797979;
+}
+
+footer li a{
+    color: #797979;
+}
+
+footer li a:hover {
+    text-decoration: underline;
+    color: #797979;
+}
