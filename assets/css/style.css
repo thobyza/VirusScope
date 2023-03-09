@@ -179,7 +179,7 @@ img {
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
-        top: 100px;
+        top: 60px;
         left: 0;
         width: 100%;
         flex-direction: column;
